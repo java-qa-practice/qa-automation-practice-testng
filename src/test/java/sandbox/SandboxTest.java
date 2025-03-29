@@ -36,7 +36,7 @@ public class SandboxTest {
     public void testGroupCreation() {
         goToGroupPage();
         initGroupCreation();
-        fillGroupForm("test1", "test2", "test3");
+        fillGroupForm(new GroupPage("Name", "Header", "Footer"));
         submitGroupCreation();
         returnToGroupPage();
     }
@@ -49,16 +49,16 @@ public class SandboxTest {
         wd.findElement(By.name("submit")).click();
     }
 
-    private void fillGroupForm(String groupName, String groupHeader, String groupFooter) {
+    private void fillGroupForm(GroupPage groupPageData) {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupName);
+        wd.findElement(By.name("group_name")).sendKeys(groupPageData.getGroupName());
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupHeader);
+        wd.findElement(By.name("group_header")).sendKeys(groupPageData.getGroupHeader());
         wd.findElement(By.name("group_footer")).click();
         wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(groupFooter);
+        wd.findElement(By.name("group_footer")).sendKeys(groupPageData.getGroupFooter());
     }
 
     private void initGroupCreation() {
