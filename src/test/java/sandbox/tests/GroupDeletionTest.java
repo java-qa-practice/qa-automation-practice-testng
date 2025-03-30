@@ -1,4 +1,4 @@
-package sandbox;
+package sandbox.tests;
 
 import org.testng.annotations.Test;
 

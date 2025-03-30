@@ -1,6 +1,7 @@
-package sandbox;
+package sandbox.tests;
 
 import org.testng.annotations.Test;
+import sandbox.models.GroupPage;
 
 public class GroupCreationTest extends TestBase {
 
